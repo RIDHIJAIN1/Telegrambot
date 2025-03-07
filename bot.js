@@ -2,7 +2,7 @@ const TelegramBot = require('node-telegram-bot-api');
 const express = require('express');
 
 const TOKEN = '7544458282:AAFVP95SnAP7yL3-vicycW0SMb-IRZ04TVo'; // Replace with your actual bot token
-const WEB_APP_URL = 'https://codinwalk.com/';  // Your Web App URL
+const WEB_APP_URL = 'https://quizzical-hermann.74-208-164-206.plesk.page';  // Your Web App URL
 const SERVER_URL = 'https://telegrambot-p4ab.onrender.com'; // Your Render server URL
 
 const bot = new TelegramBot(TOKEN, { webHook: true });
