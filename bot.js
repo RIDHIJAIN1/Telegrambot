@@ -45,6 +45,6 @@ app.listen(PORT, async () => {
         await bot.setWebHook(`${SERVER_URL}/bot${TOKEN}`);
         console.log(`✅ Webhook set to ${SERVER_URL}/bot${TOKEN}`);
     } catch (error) {
-        console.error("❌ Failed to set webhook:", error);
+        console.error("❌ Failed to set webhook", error);
     }
 });
