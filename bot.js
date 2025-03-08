@@ -27,7 +27,7 @@ bot.onText(/\/start/, (msg) => {
     const options = {
         reply_markup: {
             inline_keyboard: [
-                [{ text: "Play Game", web_app: WEB_APP_URL }]
+                [{ text: "Play Game", web_app:{url: WEB_APP_URL} }]
             ]
         }
     };
