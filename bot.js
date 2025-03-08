@@ -27,7 +27,8 @@ bot.onText(/\/start/, (msg) => {
     const options = {
         reply_markup: {
             inline_keyboard: [
-                [{ text: "Play Game", web_app:{url: WEB_APP_URL} }]
+                [{ text: "Play Game",
+                   web_app:{url: WEB_APP_URL} }]
             ]
         }
     };
@@ -35,16 +36,18 @@ bot.onText(/\/start/, (msg) => {
     bot.sendMessage(chatId, "🎮 Click the button below to start playing:", options);
 });
 
-// Start Express Server
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, async () => {
-    console.log(`🚀 Server is running on port ${PORT}`);
-    
-    // Set Webhook after server starts
+const setWebhook = async () => {
     try {
         await bot.setWebHook(`${SERVER_URL}/bot${TOKEN}`);
         console.log(`✅ Webhook set to ${SERVER_URL}/bot${TOKEN}`);
     } catch (error) {
         console.error("❌ Failed to set webhook", error);
     }
+};
+
+// Start Express Server
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`🚀 Server is running on port ${PORT}`);
+    setWebhook(); // Set webhook when the server starts
 });
